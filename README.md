@@ -3,7 +3,7 @@
 Demo: [https://vercel.com/thaivanluat/nt-vue3-store](https://nt-vue3-store.vercel.app/)
 
 Features:
-- Shop list (list of products)
+- Shop list (list of products) , search bar product, pagination
 - product details
 - Cart page (add to cart)
 - Login, update user, register
