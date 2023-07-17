@@ -46,7 +46,7 @@ const breadCrumb = "Wishlist";
                                         <td class="li-product-thumbnail">
                                             <a href="#"
                                                 ><img
-                                                    src="images/wishlist-thumb/1.jpg"
+                                                    src="/images/wishlist-thumb/1.jpg"
                                                     alt=""
                                             /></a>
                                         </td>
@@ -74,7 +74,7 @@ const breadCrumb = "Wishlist";
                                         <td class="li-product-thumbnail">
                                             <a href="#"
                                                 ><img
-                                                    src="images/wishlist-thumb/2.jpg"
+                                                    src="/images/wishlist-thumb/2.jpg"
                                                     alt=""
                                             /></a>
                                         </td>
@@ -102,7 +102,7 @@ const breadCrumb = "Wishlist";
                                         <td class="li-product-thumbnail">
                                             <a href="#"
                                                 ><img
-                                                    src="images/wishlist-thumb/3.jpg"
+                                                    src="/images/wishlist-thumb/3.jpg"
                                                     alt=""
                                             /></a>
                                         </td>

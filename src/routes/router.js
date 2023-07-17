@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import About from "@/pages/About.vue";
 import Checkout from "@/pages/Checkout.vue";
-import Home from "@/pages/Home.vue";
 import Products from "@/pages/Products.vue";
 import ProductDetail from "@/pages/ProductDetail.vue";
 import ShoppingCart from "@/pages/ShoppingCart.vue";

@@ -32,7 +32,7 @@ function setListView(type) {
                         <div class="single-banner shop-page-banner">
                             <a href="#">
                                 <img
-                                    src="images/bg-banner/2.jpg"
+                                    src="/images/bg-banner/2.jpg"
                                     alt="Li's Static Banner"
                                 />
                             </a>

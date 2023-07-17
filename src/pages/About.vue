@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
 
-const breadCrumb = 'About Us'
+const breadCrumb = "About Us";
 </script>
 
 <template>
@@ -41,7 +41,7 @@ const breadCrumb = 'About Us'
                     <div class="about-image-wrap">
                         <img
                             class="img-full"
-                            src="images/product/large-size/13.jpg"
+                            src="/images/product/large-size/13.jpg"
                             alt="About Us"
                         />
                     </div>
@@ -60,7 +60,7 @@ const breadCrumb = 'About Us'
                     <div class="limupa-counter white-smoke-bg">
                         <div class="container">
                             <div class="counter-img">
-                                <img src="images/about-us/icon/1.png" alt="" />
+                                <img src="/images/about-us/icon/1.png" alt="" />
                             </div>
                             <div class="counter-info">
                                 <div class="counter-number">
@@ -78,7 +78,7 @@ const breadCrumb = 'About Us'
                     <!-- Begin limupa Counter Area -->
                     <div class="limupa-counter gray-bg">
                         <div class="counter-img">
-                            <img src="images/about-us/icon/2.png" alt="" />
+                            <img src="/images/about-us/icon/2.png" alt="" />
                         </div>
                         <div class="counter-info">
                             <div class="counter-number">
@@ -95,7 +95,7 @@ const breadCrumb = 'About Us'
                     <!-- Begin limupa Counter Area -->
                     <div class="limupa-counter white-smoke-bg">
                         <div class="counter-img">
-                            <img src="images/about-us/icon/3.png" alt="" />
+                            <img src="/images/about-us/icon/3.png" alt="" />
                         </div>
                         <div class="counter-info">
                             <div class="counter-number">
@@ -112,7 +112,7 @@ const breadCrumb = 'About Us'
                     <!-- Begin limupa Counter Area -->
                     <div class="limupa-counter gray-bg">
                         <div class="counter-img">
-                            <img src="images/about-us/icon/4.png" alt="" />
+                            <img src="/images/about-us/icon/4.png" alt="" />
                         </div>
                         <div class="counter-info">
                             <div class="counter-number">
@@ -145,7 +145,7 @@ const breadCrumb = 'About Us'
                     <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                         <div class="team-thumb">
                             <img
-                                src="images/team/1.png"
+                                src="/images/team/1.png"
                                 alt="Our Team Member"
                             />
                         </div>
@@ -169,7 +169,7 @@ const breadCrumb = 'About Us'
                     <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                         <div class="team-thumb">
                             <img
-                                src="images/team/2.png"
+                                src="/images/team/2.png"
                                 alt="Our Team Member"
                             />
                         </div>
@@ -193,7 +193,7 @@ const breadCrumb = 'About Us'
                     <div class="team-member mb-30 mb-sm-60">
                         <div class="team-thumb">
                             <img
-                                src="images/team/3.png"
+                                src="/images/team/3.png"
                                 alt="Our Team Member"
                             />
                         </div>
@@ -217,7 +217,7 @@ const breadCrumb = 'About Us'
                     <div class="team-member mb-30 mb-sm-60 mb-xs-60">
                         <div class="team-thumb">
                             <img
-                                src="images/team/4.png"
+                                src="/images/team/4.png"
                                 alt="Our Team Member"
                             />
                         </div>
