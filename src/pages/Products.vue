@@ -6,12 +6,12 @@ import { useProductStore } from "@/stores/product";
 import ProductGridList from "@/components/shop/ProductGridList.vue";
 import ProductList from "@/components/shop/ProductList.vue";
 import Loading from "@/components/layouts/Loading.vue";
+import Pagination from "@/components/shop/Pagination.vue";
 
 const breadCrumb = "Shop";
 const alertStore = useAlertStore();
 const productStore = useProductStore();
 
-const products = productStore.products;
 const listView = ref("grid");
 
 function setListView(type) {
@@ -87,11 +87,20 @@ function setListView(type) {
                         </div>
 
                         <div class="shop-products-wrapper">
+                            <Pagination />
                             <template v-if="listView === 'grid'">
-                                <ProductGridList :products="products" />
+                                <ProductGridList
+                                    :products="
+                                        productStore.paginatedProductList
+                                    "
+                                />
                             </template>
                             <template v-if="listView === 'list'">
-                                <ProductList :products="products" />
+                                <ProductList
+                                    :products="
+                                        productStore.paginatedProductList
+                                    "
+                                />
                             </template>
                         </div>
                     </div>

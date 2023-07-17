@@ -1,10 +1,12 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
 import { useAlertStore } from "@/stores/alert";
 import { useCartStore } from "@/stores/cart";
 import { useRoute } from "vue-router";
 import RatingStar from "@/components/layouts/RatingStar.vue";
+import Loading from "@/components/layouts/Loading.vue";
+import { onBeforeRouteUpdate } from "vue-router";
 
 const alertStore = useAlertStore();
 const cartStore = useCartStore();
@@ -14,11 +16,11 @@ const quanlity = ref(1);
 
 const breadCrumb = "Single product";
 const route = useRoute();
-const productId = route.params.productId;
+const productId = ref(route.params.productId);
 
 async function getProduct() {
     alertStore.setLoading(true);
-    await fetch("https://fakestoreapi.com/products/" + productId)
+    await fetch("https://fakestoreapi.com/products/" + productId.value)
         .then((res) => res.json())
         .then((json) => {
             if (json) {
@@ -40,13 +42,21 @@ function onAddToCart(productId, quanlity) {
 }
 
 getProduct();
+watch(
+    () => route.params.productId,
+    async (newId) => {
+        console.log(newId);
+        productId.value = newId;
+        getProduct();
+    }
+);
 </script>
 
 <template>
     <Breadcrumb :name="breadCrumb" />
 
     <template v-if="alertStore.loading">
-        <h1>Loading</h1>
+        <Loading />
     </template>
     <template v-else>
         <div class="content-wraper">

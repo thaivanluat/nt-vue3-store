@@ -1,16 +1,19 @@
 <script setup>
 import { ref } from "vue";
 import { useCartStore } from "@/stores/cart";
+import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
 
+const breadCrumb = "Shopping Cart";
 const cartStore = useCartStore();
 </script>
 
 <template>
+    <Breadcrumb :name="breadCrumb" />
     <div class="Shopping-cart-area pt-60 pb-60">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="#">
+                    <form @submit.prevent>
                         <div class="table-content table-responsive">
                             <table class="table">
                                 <thead>
@@ -121,7 +124,7 @@ const cartStore = useCartStore();
                                             <td class="product-subtotal">
                                                 <span class="amount"
                                                     >${{
-                                                        cartStore.total
+                                                        product.cost
                                                     }}</span
                                                 >
                                             </td>
@@ -154,7 +157,7 @@ const cartStore = useCartStore();
                                             class="button"
                                             name="update_cart"
                                             value="Remove All"
-                                            @submit.prevent
+                                            
                                             @click="cartStore.removeAll"
                                             type="submit"
                                         />

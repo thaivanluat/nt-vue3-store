@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import { useAlertStore } from "@/stores/alert";
+import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
+
+const breadCrumb = "My Account";
 
 const randomUser = ref({
     name: {},
@@ -51,6 +54,7 @@ async function updateUser() {
 </script>
 
 <template>
+    <Breadcrumb :name="breadCrumb" />
     <div class="page-section mb-60">
         <div class="container">
             <div class="row">

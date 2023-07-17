@@ -108,15 +108,17 @@ function autoLogin() {
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                    <h4 class="login-title">Auto Login</h4>
-                    <div class="row">
-                        <div class="col-12">
-                            <button
-                                class="register-button mt-0"
-                                @click="autoLogin"
-                            >
-                                Login
-                            </button>
+                    <div class="login-form">
+                        <h4 class="login-title">Auto Login</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <button
+                                    class="register-button mt-0"
+                                    @click="autoLogin"
+                                >
+                                    Login
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

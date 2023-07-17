@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import { useCartStore } from "@/stores/cart";
+import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
 
+const breadCrumb = "Checkout";
 const cartStore = useCartStore();
 
 function placeOrder() {
@@ -11,6 +13,7 @@ function placeOrder() {
 </script>
 
 <template>
+    <Breadcrumb :name="breadCrumb" />
     <div class="checkout-area pt-60 pb-30">
         <div class="container">
             <div class="row">

@@ -1,7 +1,7 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useCartStore } from "@/stores/cart";
-import SearchBox from '@/components/layouts/SearchBox.vue'
+import SearchBox from "@/components/layouts/SearchBox.vue";
 const cartStore = useCartStore();
 const isToggleCart = ref(false);
 
@@ -12,6 +12,21 @@ function toggleCart() {
 const formattedCart = computed(() => cartStore.formattedCart);
 const total = computed(() => cartStore.total);
 const count = computed(() => cartStore.count);
+
+onMounted(() => {
+    document.addEventListener("click", (e) => {
+        let minicart = document.getElementById("minicart");
+        let minicartBtn = document.getElementById("minicart-button");
+        if (
+            minicart !== undefined &&
+            minicart.contains(e.target) === false &&
+            minicartBtn.contains(e.target) === false
+        ) {
+            //click outside!
+            isToggleCart.value = false;
+        }
+    });
+});
 </script>
 
 <template>
@@ -47,7 +62,7 @@ const count = computed(() => cartStore.count);
                             </li>
                             <!-- Header Middle Wishlist Area End Here -->
                             <!-- Begin Header Mini Cart Area -->
-                            <li class="hm-minicart">
+                            <li class="hm-minicart" id="minicart-button">
                                 <div
                                     class="hm-minicart-trigger"
                                     @click="toggleCart"
@@ -63,6 +78,7 @@ const count = computed(() => cartStore.count);
                                 <span></span>
                                 <div
                                     class="minicart"
+                                    id="minicart"
                                     :class="{ active: isToggleCart }"
                                 >
                                     <ul class="minicart-product-list">
