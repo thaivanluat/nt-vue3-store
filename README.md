@@ -1,12 +1,12 @@
 ## Store page using Vue 3 + Vite
 
-Demo: [https://nt-nextjs-blog.vercel.app/](https://nt-vue3-store.vercel.app/)
+Demo: [https://vercel.com/thaivanluat/nt-vue3-store](https://nt-vue3-store.vercel.app/)
 
 Features:
 - Shop list (list of products)
 - product details
 - Cart page (add to cart)
-- Login, update user
+- Login, update user, register
 
 Using: 
 
