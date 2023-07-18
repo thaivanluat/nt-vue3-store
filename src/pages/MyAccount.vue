@@ -18,7 +18,7 @@ async function getRandomUser() {
     if (authStore.user) {
         randomUser.value = authStore.user;
     } else {
-        const randomUserId = authStore.userId ?? Math.floor(Math.random() * 11);
+        const randomUserId = Math.floor(Math.random() * 11);
 
         alertStore.setLoading(true);
 
