@@ -6,6 +6,7 @@ import Products from "@/pages/Products.vue";
 import ProductDetail from "@/pages/ProductDetail.vue";
 import ShoppingCart from "@/pages/ShoppingCart.vue";
 import SignIn from "@/pages/SignIn.vue";
+import SignUp from "@/pages/SignUp.vue";
 import Wishlist from "@/pages/Wishlist.vue";
 import MyAccount from "@/pages/MyAccount.vue";
 import NotFound from "@/pages/NotFound.vue";
@@ -15,6 +16,7 @@ const routes = [
     { path: "/", component: Products },
     { path: "/about", component: About },
     { path: "/sign-in", component: SignIn },
+    { path: "/sign-up", component: SignUp },
     { path: "/product-list", component: Products },
     { path: "/product-detail/:productId", component: ProductDetail },
     { path: "/checkout", component: Checkout },
@@ -48,7 +50,7 @@ router.beforeEach(async (to) => {
         return "/sign-in";
     }
 
-    if (auth.token && to.path === "/sign-in") {
+    if (auth.token && (to.path === "/sign-in" || to.path === "/sign-up")) {
         return "/my-account";
     }
 });

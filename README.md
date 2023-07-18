@@ -1,19 +1,21 @@
 ## Store page using Vue 3 + Vite
 
-Demo: [https://vercel.com/thaivanluat/nt-vue3-store](https://nt-vue3-store.vercel.app/)
+\
+Demo: <a href="https://nt-vue3-store.vercel.app" target="_blank">https://nt-vue3-store.vercel.app</a>
 
 Features:
-- Shop list (list of products) , search bar product, pagination
-- product details
-- Cart page (add to cart)
-- Login, update user, register
 
-Using: 
+-   Shop list (list of products) , search bar product, pagination
+-   product details
+-   Cart page (add to cart)
+-   Login, update user, register
 
-- [vue] - JavaScript framework for building user interfaces.
-- [pinia] -  A store library and state management framework for Vue.js
-- [vue-router] -  The official router for Vue.js
-  
+Using:
+
+-   [vue] - JavaScript framework for building user interfaces.
+-   [pinia] - A store library and state management framework for Vue.js
+-   [vue-router] - The official router for Vue.js
+
 ```
 # Install dependencies
 $ npm install

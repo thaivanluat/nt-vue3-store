@@ -32,6 +32,7 @@ async function onSubmit() {
     })
         .then((res) => {
             console.log(res);
+            alertStore.setLoading(false);
             if (res.status === 200) {
                 return res.json();
             } else {
@@ -47,8 +48,6 @@ async function onSubmit() {
                 console.log("login fail");
             }
         });
-
-    alertStore.setLoading(false);
 }
 
 function autoLogin() {

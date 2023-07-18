@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useAlertStore } from "@/stores/alert";
+import { useAuthStore } from "@/stores/auth";
 import Breadcrumb from "@/components/layouts/Breadcrumb.vue";
 
 const breadCrumb = "My Account";
@@ -9,22 +10,28 @@ const randomUser = ref({
     name: {},
 });
 const alertStore = useAlertStore();
+const authStore = useAuthStore();
 
 const updateStatus = ref("");
 
 async function getRandomUser() {
-    const randomUserId = Math.floor(Math.random() * 11);
+    if (authStore.user) {
+        randomUser.value = authStore.user;
+    } else {
+        const randomUserId = authStore.userId ?? Math.floor(Math.random() * 11);
 
-    alertStore.setLoading(true);
+        alertStore.setLoading(true);
 
-    const apiCall = await fetch(
-        "https://fakestoreapi.com/users/" + randomUserId
-    )
-        .then((res) => res.json())
-        .then((json) => {
-            randomUser.value = json;
-            alertStore.setLoading(false);
-        });
+        const apiCall = await fetch(
+            "https://fakestoreapi.com/users/" + randomUserId
+        )
+            .then((res) => res.json())
+            .then((json) => {
+                randomUser.value = json;
+                authStore.setUser(json);
+                alertStore.setLoading(false);
+            });
+    }
 }
 getRandomUser();
 
@@ -49,7 +56,13 @@ async function updateUser() {
             alertStore.setLoading(false);
             updateStatus.value = "success";
             randomUser.value = json;
+            authStore.setUser(json);
         });
+}
+
+function setUser(user) {
+    randomUser.value = user;
+    authStore.setUser(user);
 }
 </script>
 
